@@ -1,0 +1,371 @@
+$black: #000000;
+$cornflower-lilac: #ffaea9;
+$salmon: #ff7b73;
+$white: #ffffff;
+$your-pink: #ffcccc;
+
+.sign-in-val {
+  .c-checkbox {
+    display: none;
+
+    &:checked + .c-formContainer {
+      .c-form {
+        width: 54em;
+      }
+
+      .c-form__toggle {
+        visibility: hidden;
+        opacity: 0;
+        transform: scale(0.7);
+      }
+
+      .c-form__input,
+      .c-form__buttonLabel {
+        transition: 0.2s 0.1s;
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    &:not(:checked) + .c-formContainer {
+      .c-form__input:required:valid ~ .c-form__toggle {
+        pointer-events: none;
+        cursor: default;
+      }
+    }
+  }
+
+  .c-formContainer,
+  .c-form,
+  .c-form__toggle {
+    width: 20em;
+    height: 6.25em;
+  }
+
+  .c-formContainer {
+    position: relative;
+    font-weight: 700;
+  }
+
+  .c-form,
+  .c-form__toggle {
+    position: absolute;
+    border-radius: 6.25em;
+    background-color: $white;
+    transition: 0.2s;
+  }
+
+  .clicked-sign {
+    transform: translateX(-25%);
+  }
+
+  .arrow-left-back{
+    transition: all;
+  }
+
+  .c-form {
+    padding: 0.625em;
+    box-sizing: border-box;
+    box-shadow: 0 0.125em 0.3125em rgba($black, 0.3);
+
+    // position form inputs
+    display: flex;
+    justify-content: center;
+  }
+
+  .c-form__toggle {
+    color: $salmon;
+    top: 0;
+    cursor: pointer;
+    z-index: 1;
+    // left: 25%;
+    // transform: translateX(25%);
+
+    // position message
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      font-size: 1.75em;
+      content: attr(data-title);
+    }
+  }
+
+  .c-form__input,
+  .c-form__button {
+    font: inherit;
+    border: 0;
+    outline: 0;
+    border-radius: 5em;
+    box-sizing: border-box;
+  }
+
+  .c-form__input,
+  .c-form__buttonLabel {
+    font-size: 1.75em;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.7);
+    transition: 0s;
+  }
+
+  .c-form__input {
+    color: $your-pink;
+    height: 100%;
+    width: 100%;
+    padding: 0 0.714em;
+
+    &::placeholder {
+      color: currentColor;
+    }
+  }
+
+  .valid-email {
+    color: $salmon;
+
+    + .c-form__buttonLabel {
+      color: $white;
+
+      &::before {
+        pointer-events: initial;
+      }
+    }
+  }
+
+  .disable-btn {
+    color: $cornflower-lilac !important;
+  }
+
+  .c-form__buttonLabel {
+    color: $cornflower-lilac;
+    height: 100%;
+    width: auto;
+
+    // accepts click events
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      cursor: pointer;
+    }
+  }
+
+  .c-form__button {
+    color: inherit;
+    padding: 0;
+    height: 100%;
+    width: 5em;
+    background-color: $salmon;
+  }
+
+  .c-checkbox-1 {
+    display: none;
+
+    &:checked + .c-formContainer-1 {
+      .c-form-1 {
+        visibility: visible;
+        width: 54em;
+      }
+
+      .c-form__toggle-1 {
+        visibility: hidden;
+        opacity: 0;
+        transform: scale(0.7);
+      }
+
+      .c-form__input-1,
+      .c-form__buttonLabel-1 {
+        transition: 0.2s 0.1s;
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    &:not(:checked) + .c-formContainer-1 {
+      .c-form__input-1:required:valid ~ .c-form__toggle-1 {
+        pointer-events: none;
+        cursor: default;
+      }
+    }
+  }
+
+  .c-formContainer-1,
+  .c-form-1,
+  .c-form__toggle-1 {
+    width: 20em;
+    height: 6.25em;
+  }
+
+  .c-formContainer-1 {
+    position: relative;
+    font-weight: 700;
+  }
+
+  .c-form-1,
+  .c-form__toggle-1 {
+    position: absolute;
+    border-radius: 6.25em;
+    background-color: $white;
+    transition: 0.2s;
+  }
+
+  .c-form-1 {
+    visibility: hidden;
+    // left: 50%;
+    transform: translateX(-25%);
+    padding: 0.625em;
+    box-sizing: border-box;
+    box-shadow: 0 0.125em 0.3125em rgba($black, 0.3);
+
+    // position form inputs
+    display: flex;
+    justify-content: center;
+  }
+
+  .c-form__toggle-1 {
+    color: $salmon;
+    top: 0;
+    cursor: pointer;
+    z-index: 1;
+
+    // position message
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      font-size: 1.75em;
+      content: attr(data-title);
+    }
+  }
+
+  .c-form__input-1,
+  .c-form__button-1 {
+    font: inherit;
+    border: 0;
+    outline: 0;
+    border-radius: 5em;
+    box-sizing: border-box;
+  }
+
+  .c-form__input-1,
+  .c-form__buttonLabel-1 {
+    font-size: 1.75em;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.7);
+    transition: 0s;
+  }
+
+  .c-form__input-1 {
+    color: $your-pink;
+    height: 100%;
+    width: 100%;
+    padding: 0 0.714em;
+
+    &::placeholder {
+      color: currentColor;
+    }
+  }
+
+  .valid-otp {
+    color: $salmon;
+
+    + .c-form__buttonLabel-1 {
+      color: $white;
+
+      &::before {
+        pointer-events: initial;
+      }
+    }
+  }
+
+  .c-form__buttonLabel-1 {
+    color: $cornflower-lilac;
+    height: 100%;
+    width: auto;
+
+    // accepts click events
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      cursor: pointer;
+    }
+  }
+
+  .c-form__button-1 {
+    color: inherit;
+    padding: 0;
+    height: 100%;
+    width: 5em;
+    background-color: $salmon;
+  }
+
+  $ease: cubic-bezier(0.2, 1, 0.3, 1);
+
+  div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    svg {
+      fill: #ffffff;
+      width: 100px;
+      height: auto;
+      margin: 0 2rem;
+      cursor: pointer;
+      overflow: visible;
+      polygon,
+      path {
+        transition: all 0.5s $ease;
+      }
+      &:hover polygon,
+      &:hover path {
+        transition: all 1s $ease;
+        fill: #ff4136;
+      }
+
+      &:hover .arrow {
+        animation: arrow-anim 2.5s $ease infinite;
+      }
+      &:hover .arrow-fixed {
+        animation: arrow-fixed-anim 2.5s $ease infinite;
+      }
+    }
+  }
+
+  @keyframes arrow-anim {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    5% {
+      transform: translateX(-0.1rem);
+    }
+    100% {
+      transform: translateX(1rem);
+      opacity: 0;
+    }
+  }
+
+  @keyframes arrow-fixed-anim {
+    5% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
