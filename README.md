@@ -1,6 +1,5 @@
 Here is the entire README content with all steps combined in a single block for easy copying:
 
-```markdown
 # Vite + React App Deployment
 
 This project is a React application built with Vite. The guide below provides steps to deploy the app on an Ubuntu server using Nginx.
@@ -8,6 +7,7 @@ This project is a React application built with Vite. The guide below provides st
 ## Prerequisites
 
 Before starting, ensure the following are installed and configured:
+
 - **Node.js and npm**: Required to build the project.
 - **Nginx**: For serving the application.
 - **Ubuntu server access**: You have SSH access to the server.
@@ -17,11 +17,10 @@ Before starting, ensure the following are installed and configured:
 
 First, build the production version of the Vite + React application, you need:
 
-```bash
+````bash
 cd validatorvn
 npm install
 npm run build
-```
 
 This command will create a `dist` folder containing the static files required for deployment.
 
@@ -32,7 +31,7 @@ If Nginx is not already installed, install it on your Ubuntu server:
 ```bash
 sudo apt update
 sudo apt install nginx -y
-```
+````
 
 ## Step 3: Configure Nginx
 
@@ -131,9 +130,9 @@ sudo apt install nginx -y
 
 - **If the app does not load**, check the Nginx error logs:
 
-   ```bash
-   sudo tail -f /var/log/nginx/error.log
-   ```
+  ```bash
+  sudo tail -f /var/log/nginx/error.log
+  ```
 
 - **Verify that the `dist` folder** was copied correctly to `/var/www/your-app`.
 
@@ -148,6 +147,8 @@ sudo apt install nginx -y
 ## License
 
 This project is open-source and available under the MIT License.
+
 ```
 
 This README content is formatted as a single block to make it easy for you to copy and paste into your project's README file on GitHub.
+```
