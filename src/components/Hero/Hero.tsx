@@ -61,17 +61,22 @@ function Hero({ chainConfigData }: any) {
                   >
                     Dashboard Usage
                   </h1>
-                  <p
+                  <ul
                     className="m-0 mt-4 text-lg leading-8 text-body-secondary"
                     data-aos-delay="100"
                     data-aos="fade"
                     data-aos-duration="1000"
                   >
-                    Get real-time insights into validator performance. Track
-                    uptime and monitor commission changes effortlessly. Stay
-                    informed to protect your stake from risks. Avoid potential
-                    slashes with advanced tracking from ValidatorVN.
-                  </p>
+                    <li>Get real-time insights into validator performance.</li>
+                    <li>
+                      Track uptime and monitor commission changes effortlessly.
+                    </li>
+                    <li>Stay informed to protect your stake from risks</li>
+                    <li>
+                      Avoid potential slashes with advanced tracking from
+                      ValidatorVN.
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>

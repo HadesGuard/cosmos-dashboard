@@ -15,6 +15,7 @@ export const CustomTab = styled(Tab)(({}) => ({
   textTransform: "none",
   color: "#7d7d7d",
   fontSize: 20,
+  fontWeight: 600,
   "&.Mui-selected": {
     color: "#e1e1e1",
   },
@@ -62,12 +63,12 @@ export const CustomTableRow = styled(TableRow)(
 );
 
 // Styled component for TableCell
-export const CustomTableCell = styled(TableCell)(({ theme }) => ({
+export const CustomTableCell = styled(TableCell)(() => ({
   color: "#ddd", // Optional: Text color for better contrast
 }));
 
 // Styled component for TableHeader row
-export const HeaderTableRow = styled(TableRow)(({ theme }) => ({
+export const HeaderTableRow = styled(TableRow)(() => ({
   backgroundColor: "#1f1f1f", // Background for header
 
   "& th": {
@@ -89,6 +90,6 @@ export const HeaderTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-export const ChildTableRow = styled(TableRow)(({ theme }) => ({
+export const ChildTableRow = styled(TableRow)(() => ({
   backgroundColor: "#1f1f1f",
 }));

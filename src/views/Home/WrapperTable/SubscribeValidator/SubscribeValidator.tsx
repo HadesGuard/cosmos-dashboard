@@ -24,7 +24,7 @@ import {
 } from "../../../../apis/chains";
 import { generateUUID } from "../../../../utils/uuid";
 import { IAddressStaking, IChainConfig } from "../../../../constants/type";
-import { displayCoin } from "../../../../utils/format";
+import { displayCoin, shortenString } from "../../../../utils/format";
 import {
   Button,
   CircularProgress,
@@ -33,6 +33,7 @@ import {
 } from "@mui/material";
 import { toast } from "react-toastify";
 import { TOAST_PROPS } from "../../../../constants/toast";
+import Copy from "../../../../assets/Copy";
 
 function RowTable({
   row,
@@ -55,6 +56,11 @@ function RowTable({
     }
   };
 
+  const handleClickCopy = (str: string, text: string = "Copied!") => {
+    navigator.clipboard.writeText(str);
+    toast.info(text, TOAST_PROPS);
+  };
+
   return (
     <React.Fragment>
       <CustomTableRow open={open}>
@@ -71,9 +77,17 @@ function RowTable({
             )}
           </IconButton>
         </CustomTableCell>
-        <CustomTableCell>{row?.chainId}</CustomTableCell>
         <CustomTableCell>{row?.chainName}</CustomTableCell>
-        <CustomTableCell>{row?.address}</CustomTableCell>
+        <CustomTableCell>{row?.chainId}</CustomTableCell>
+        <CustomTableCell>
+          {row?.address}{" "}
+          <Copy
+            style={{ marginLeft: "6px", cursor: "pointer" }}
+            onClick={() =>
+              handleClickCopy(row?.address, "Copied Address Successfully!")
+            }
+          />
+        </CustomTableCell>
         <CustomTableCell>
           <Tooltip title="Unsubscribe">
             <Button onClick={handleUnsubscribe}>
@@ -101,8 +115,11 @@ function RowTable({
                     <CustomTableCell>Staked</CustomTableCell>
                     <CustomTableCell>Rewards</CustomTableCell>
                     <CustomTableCell>Validator Address</CustomTableCell>
-                    <CustomTableCell>Uptime</CustomTableCell>
-                    <CustomTableCell>Commission</CustomTableCell>
+                    <CustomTableCell align="right">Uptime</CustomTableCell>
+                    <CustomTableCell align="right">Commission</CustomTableCell>
+                    <CustomTableCell align="right">
+                      Governance Participation
+                    </CustomTableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -124,13 +141,33 @@ function RowTable({
                           {displayCoin(stakingInfoItem.rewards, row.decimal)}
                         </CustomTableCell>
                         <CustomTableCell>
-                          {stakingInfoItem.validatorAddress}
+                          <Tooltip title={stakingInfoItem.validatorAddress}>
+                            <span>
+                              {shortenString(
+                                stakingInfoItem.validatorAddress,
+                                12
+                              )}
+                            </span>
+                          </Tooltip>
+
+                          <Copy
+                            style={{ marginLeft: "6px", cursor: "pointer" }}
+                            onClick={() =>
+                              handleClickCopy(
+                                stakingInfoItem.validatorAddress,
+                                "Copied Validator Address Successfully!"
+                              )
+                            }
+                          />
                         </CustomTableCell>
-                        <CustomTableCell>
+                        <CustomTableCell align="right">
                           {stakingInfoItem.uptime} %
                         </CustomTableCell>
-                        <CustomTableCell>
+                        <CustomTableCell align="right">
                           {stakingInfoItem.commission} %
+                        </CustomTableCell>
+                        <CustomTableCell align="right">
+                          {stakingInfoItem.governanceParticipation}
                         </CustomTableCell>
                       </TableRow>
                     ))}
@@ -187,8 +224,8 @@ export default function SubscribeValidator({
         <TableHead>
           <HeaderTableRow>
             <CustomTableCell />
-            <CustomTableCell>Chain ID</CustomTableCell>
             <CustomTableCell>Chain Name</CustomTableCell>
+            <CustomTableCell>Chain ID</CustomTableCell>
             <CustomTableCell>Address</CustomTableCell>
             <CustomTableCell>Action</CustomTableCell>
           </HeaderTableRow>

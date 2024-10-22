@@ -3,7 +3,13 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Input from "@mui/material/Input";
-import { CircularProgress, FormControl, InputLabel } from "@mui/material";
+import {
+  CircularProgress,
+  FormControl,
+  IconButton,
+  InputLabel,
+} from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import {
   Dispatch,
   SetStateAction,
@@ -73,6 +79,13 @@ export default function BasicModal({ open, setOpen, chain }: IBasicModalProps) {
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
+        <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          sx={{ position: "absolute", right: 8, top: 8 }}
+        >
+          <CloseIcon sx={{ fill: "white" }} />
+        </IconButton>
         <Typography
           id="modal-modal-title"
           variant="h6"

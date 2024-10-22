@@ -1,6 +1,7 @@
-function Copy({ onClick }: { onClick?: () => void }) {
+function Copy({ onClick, ...rest }: any) {
   return (
     <svg
+      {...rest}
       onClick={onClick}
       fill="currentColor"
       version="1.1"

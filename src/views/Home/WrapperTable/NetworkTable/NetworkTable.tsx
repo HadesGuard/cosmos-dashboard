@@ -5,6 +5,7 @@ import BasicModal from "../../../../components/ModalSubscribe";
 import { useAuth } from "../../../../components/AuthContext";
 import { toast } from "react-toastify";
 import { TOAST_PROPS } from "../../../../constants/toast";
+import { Box } from "@mui/material";
 
 export function NetworkTable({ chainConfigData, isLoading }: any) {
   const [openModal, setOpenModal] = useState(false);
@@ -28,6 +29,18 @@ export function NetworkTable({ chainConfigData, isLoading }: any) {
       sortable: false,
       filterable: false,
       flex: 2,
+      renderCell: (field: any) => {
+        return (
+          <Box>
+            <img
+              src={field.row.logoUrl}
+              alt="chain-logo"
+              style={{ width: "32px", marginRight: "10px" }}
+            />
+            {field.value}
+          </Box>
+        );
+      },
     },
     {
       field: "chainId",

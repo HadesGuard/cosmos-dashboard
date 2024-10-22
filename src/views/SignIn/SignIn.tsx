@@ -150,6 +150,16 @@ export default function SignIn() {
           </form>
         </div>
       </div>
+      <div
+        style={{ position: "absolute", top: "-7em", left: 0, width: "700px" }}
+      >
+        {isClickedSignIn && (
+          <i>
+            All information related to validator status, commission change will
+            be sent to your email.
+          </i>
+        )}
+      </div>
       <div style={{ position: "absolute", top: "9em", left: 0 }}>
         <input
           className="c-checkbox-1"

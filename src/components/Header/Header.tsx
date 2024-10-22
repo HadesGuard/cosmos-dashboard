@@ -76,7 +76,7 @@ export const Header = () => {
                     // onclick="scrollToSection('#home')"
                     className="nav-link rounded-3 px-3 text-lg fw-semibold leading-6 text-body-emphasis bg-body-secondary-hover"
                   >
-                    Introduce
+                    Introduction
                   </a>
                 </li>
 

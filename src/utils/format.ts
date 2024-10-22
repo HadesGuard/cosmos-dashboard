@@ -14,7 +14,12 @@ export function formatNumber(num: number) {
 }
 
 export const displayCoin = (deposit: IAmount, decimal: number = 6) => {
-  const amount = Math.round(Number(deposit.amount) / 10 ** decimal);
-  const symbol = deposit.denom.slice(1).toUpperCase();
+  const amount = Math.round(Number(deposit.amount) / 10 ** (decimal + 6));
+  let symbol;
+  if (deposit.denom.startsWith("u")) {
+    symbol = deposit.denom.slice(1).toUpperCase();
+  } else {
+    symbol = deposit.denom.toUpperCase();
+  }
   return `${amount.toLocaleString()} ${symbol}`;
 };

@@ -66,8 +66,8 @@ export default function WrapperTable({
           onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <CustomTab label="Network" {...a11yProps(0)} />
-          <CustomTab label="Your Staking Info" {...a11yProps(1)} />
+          <CustomTab label="Networks" {...a11yProps(0)} />
+          <CustomTab label="Staking Information" {...a11yProps(1)} />
         </CustomTabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
