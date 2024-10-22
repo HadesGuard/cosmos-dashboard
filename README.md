@@ -21,6 +21,7 @@ First, build the production version of the Vite + React application, you need:
 cd validatorvn
 npm install
 npm run build
+````
 
 This command will create a `dist` folder containing the static files required for deployment.
 
