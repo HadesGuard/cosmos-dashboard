@@ -1,8 +1,4 @@
-import { useNavigate } from "react-router-dom";
-
 export const Footer = () => {
-  const navigate = useNavigate();
-
   return (
     <footer className="container py-4">
       <div className="d-flex flex-column flex-md-row gap-4 justify-content-md-between align-items-md-center">
