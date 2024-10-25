@@ -1,4 +1,4 @@
-export const BASE_URL = "https://api.hadesguard.tech/";
+export const BASE_URL = "https://api.validatorvn.com/";
 const USER_API = "users";
 export const ENDPOINT_APIS = {
   SEND_OTP: `${USER_API}/send-otp`,
