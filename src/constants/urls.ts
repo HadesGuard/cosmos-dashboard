@@ -1,4 +1,4 @@
-export const BASE_URL = "https://api.validatorvn.com/";
+export const BASE_URL = "https://156.67.28.234:3000";
 const USER_API = "users";
 export const ENDPOINT_APIS = {
   SEND_OTP: `${USER_API}/send-otp`,
